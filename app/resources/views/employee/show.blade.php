@@ -12,7 +12,7 @@
         <form action="{{ route('employee.destroy', $employee->id) }}" method="post" class="d-inline">
             @csrf
             @method('delete')
-            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee attendance?')">Delete</button>
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee record?')">Delete</button>
         </form>
     </div>
 @endsection
