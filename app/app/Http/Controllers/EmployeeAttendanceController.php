@@ -21,5 +21,11 @@ class EmployeeAttendanceController extends Controllers{
         return redirect()->route ("employee.create");
     }
       
+    public function show(){
+        return view("employee.show");
+    }
     
+    public function update(){
+        return view("employee.edit");
+    }
 }
