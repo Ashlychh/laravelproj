@@ -1,31 +1,29 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
-@section('content')
+@section('content') -->
+ 
+
     <div class="container">
-        <h2>Add employee Attendance</h2>
-        <form method="post" action="{{ route('absensi_sholat.store') }}">
+        <h2>Add Employee Attendance</h2>
+        <form method="post" action="{{ route('employee.store') }}">
             @csrf
             <div class="form-group">
-                <label for="time">Time</label>
-                <input type="datetime-local" name="time" class="form-control" id="time">
+                <label for="employee_id">Employee ID</label>
+                <input type="number" name="employee_id" class="form-control" id="employee_id">
             </div>
             <div class="form-group">
                 <label for="date">Date</label>
                 <input type="date" name="date" class="form-control" id="date">
             </div>
             <div class="form-group">
-                <label for="prayer_schedule_id">Prayer Schedule</label>
-                <input type="number" name="prayer_schedule_id" class="form-control" id="prayer_schedule_id">
+                <label for="check_in">Check In</label>
+                <input type="time" name="check_in" class="form-control" id="check_in">
             </div>
             <div class="form-group">
-                <label for="id_devices">Device</label>
-                <input type="number" name="id_devices" class="form-control" id="id_devices">
+                <label for="check_out">Check Out</label>
+                <input type="time" name="check_out" class="form-control" id="check_out">
             </div>
-            <div class="form-group">
-                <label for="nis_santri">NIS Santri</label>
-                <input type="text" name="nis_santri" class="form-control" id="nis_santri">
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Save Attendance</button>
         </form>
     </div>
-@endsection
+

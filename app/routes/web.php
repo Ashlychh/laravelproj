@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/create', function () {
+    return view('employee.create');
+})->name('employee.create');
+
+Route::post('/create', function () {
+    // Handle form submission
+})->name('employee.create');
