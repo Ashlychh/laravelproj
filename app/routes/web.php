@@ -21,7 +21,7 @@ Route::get('/logIn', function () {
     return view('employee.login');
 })->name('employee.login');
 
-Route::post('/create', function () {
+Route::post('/logIn', function () {
     // Handle form submission
 })->name('employee.attendance.create');
 
