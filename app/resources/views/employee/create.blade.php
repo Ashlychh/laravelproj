@@ -5,7 +5,7 @@
 
     <div class="container">
         <h2>Add Employee Attendance</h2>
-        <form method="post" action="{{ route('employee.store') }}">
+        <form method="post" action="{{ route('employee.create') }}">
             @csrf
             <div class="form-group">
                 <label for="employee_id">Employee ID</label>
