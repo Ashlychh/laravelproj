@@ -14,11 +14,11 @@
                 <input type="date" name="date" class="form-control" id="date">
             </div>
             <div class="form-group">
-                <label for="prayer_schedule_id">Prayer Schedule</label>
+                <label for="">Check In</label>
                 <input type="number" name="prayer_schedule_id" class="form-control" id="prayer_schedule_id">
             </div>
             <div class="form-group">
-                <label for="id_devices">Device</label>
+                <label for="id_devices">Check Out</label>
                 <input type="number" name="id_devices" class="form-control" id="id_devices">
             </div>
             <div class="form-group">
