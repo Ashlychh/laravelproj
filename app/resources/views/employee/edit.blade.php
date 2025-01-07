@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h2>Edit Prayer Attendance</h2>
-        <form method="post" action="{{ route('employee.update', $absensiSholat->id) }}">
+        <h2>Edit Employee Attendance</h2>
+        <form method="post" action="{{ route('employee.update', $employee->id) }}">
             @csrf
             @method('put')
             <div class="form-group">

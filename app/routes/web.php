@@ -24,3 +24,11 @@ Route::get('/create', function () {
 Route::post('/create', function () {
     // Handle form submission
 })->name('employee.create');
+
+Route::get('/edit', function () {
+    return view('employee.update');
+})->name('employee.update');
+
+Route::post('/edit', function () {
+    // Handle form submission
+})->name('employee.update');
