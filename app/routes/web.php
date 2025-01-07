@@ -32,3 +32,9 @@ Route::get('/edit', function () {
 Route::post('/edit', function () {
     // Handle form submission
 })->name('employee.update');
+
+
+use App\Http\Controllers\AttendanceController;
+
+Route::get('employee/attendance/create', [AttendanceController::class, 'create'])->name('employee.attendance.create');
+Route::post('employee/attendance', [AttendanceController::class, 'store'])->name('employee.attendance.store');
