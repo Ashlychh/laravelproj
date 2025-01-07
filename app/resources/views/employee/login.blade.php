@@ -50,11 +50,11 @@
 <body>
 
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>LogIn</h2>
         <form action="/logIn" method="POST">
             <input type="text" name="username" class="input-field" placeholder="Username" required>
             <input type="password" name="password" class="input-field" placeholder="Password" required>
-            <button type="submit" class="login-button" href="employee.attendance.create">Login</button>
+            <button type="submit" class="login-button" href="employee.attendance">Login</button>
         </form>
     </div>
 

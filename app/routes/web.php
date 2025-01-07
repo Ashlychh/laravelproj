@@ -21,17 +21,17 @@ Route::get('/logIn', function () {
     return view('employee.login');
 })->name('employee.login');
 
-Route::post('/logIn', function () {
-    // Handle form submission
-})->name('employee.attendance.create');
+// Route::post('/logIn', function () {
+//     // Handle form submission
+// })->name('employee.attendance.create');
 
-Route::get('/edit', function () {
-    return view('employee.attendance.create');
-})->name('employee.attendance.update');
+// Route::get('/edit', function () {
+//     return view('employee.attendance.create');
+// })->name('employee.attendance.update');
 
-Route::post('/edit', function () {
-    // Handle form submission
-})->name('employee.attendance.update');
+// Route::post('/edit', function () {
+//     // Handle form submission
+// })->name('employee.attendance.update');
 
 
 // use App\Http\Controllers\AttendanceController;
