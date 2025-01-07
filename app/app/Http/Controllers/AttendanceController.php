@@ -8,7 +8,7 @@ class AttendanceController extends Controller
 {
     public function create()
     {
-        return view('attendance.create');
+        return view('employee.attendance.create');
     }
 
     public function store(Request $request)

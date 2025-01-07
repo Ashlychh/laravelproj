@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller; // Corrected the base controller class
 class EmployeeAttendanceController extends Controller { // Corrected "Controllers" to "Controller"
     
     public function create(){
-        return view("employee.create");
+        return view("employee.attendance.create");
     }
 
     public function store(Request $request){ // Use lowercase 'request' to match the method parameter
@@ -20,14 +20,14 @@ class EmployeeAttendanceController extends Controller { // Corrected "Controller
             'check_out' => $request->check_out,
         ]);
 
-        return redirect()->route("employee.create");
+        return redirect()->route("employee.attendance.create");
     }
 
     public function show(){
-        return view("employee.show");
+        return view("employee.attendance.show");
     }
 
     public function update(){
-        return view("employee.edit");
+        return view("employee.attendance.edit");
     }
 }
