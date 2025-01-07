@@ -26,7 +26,7 @@ Route::post('/create', function () {
 })->name('employee.create');
 
 Route::get('/edit', function () {
-    return view('employee.update');
+    return view('employee.create');
 })->name('employee.update');
 
 Route::post('/edit', function () {
