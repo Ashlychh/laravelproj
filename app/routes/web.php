@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/create', function () {
-    return view('employee.create');
+    return view('employee.attendance.create');
 })->name('employee.attendance.create');
 
 Route::post('/create', function () {
@@ -27,11 +27,11 @@ Route::post('/create', function () {
 
 Route::get('/edit', function () {
     return view('employee.attendance.create');
-})->name('employee.update');
+})->name('employee.attendance.update');
 
 Route::post('/edit', function () {
     // Handle form submission
-})->name('employee.update');
+})->name('employee.attendance.update');
 
 
 // use App\Http\Controllers\AttendanceController;
@@ -55,10 +55,10 @@ Route::post('/edit', function () {
 use App\Http\Controllers\AttendanceController;
 
 Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
-    Route::get('/', [AttendanceController::class, 'index'])->name('index');
+    Route::post('/', [AttendanceController::class, 'index'])->name('index');
     Route::get('create', [AttendanceController::class, 'create'])->name('create');
     Route::post('/', [AttendanceController::class, 'store'])->name('store');
     Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');
-    Route::put('{id}', [AttendanceController::class, 'update'])->name('update');
-    Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
+    // Route::put('{id}', [AttendanceController::class, 'update'])->name('update');
+    // Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
 });

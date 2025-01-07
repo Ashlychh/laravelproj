@@ -13,13 +13,13 @@ class AttendanceController extends Controller
         $attendances = Attendance::all();
         
         // Return the view with attendances
-        return view('attendance.index', compact('attendances'));
+        return view('employee.attendance.index', compact('attendances'));
     }
 
     // Show the form for creating new attendance
     public function create()
     {
-        return view('attendance.create');
+        return view('employee.attendance.create');
     }
 
     // Store a new attendance record
@@ -47,7 +47,7 @@ class AttendanceController extends Controller
     public function edit($id)
     {
         $attendance = Attendance::findOrFail($id);
-        return view('attendance.edit', compact('attendance'));
+        return view('employee.attendance.edit', compact('attendance'));
     }
 
     // Update an attendance record
