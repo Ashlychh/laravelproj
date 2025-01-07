@@ -1,7 +1,6 @@
     <!-- @extends('layouts.app')
 
     @section('content') -->
-    
 
     <div class="container">
         <h2>Add Employee Attendance</h2>
