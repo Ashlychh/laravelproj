@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('edit', function (): mixed {
-    return view ('absensi_sholat.update');
-});
+
+Route::get('/add', function () {
+    return view('employee.create');
+})->name('employee.create');
+
+Route::post('/create', function () {
+    // Handle form submisssion
+})->name('employee.create');
+
