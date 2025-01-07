@@ -21,6 +21,8 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -28,7 +30,14 @@
                     </li>
                     <!-- Add more links as needed -->
                 </ul>
-            </div>
+            
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('employee.attendance.create') }}">Record Attendance</a>
+                    </li>
+                    <!-- Add more links as needed -->
+                </ul>
+           
         </div>
     </nav>
 
