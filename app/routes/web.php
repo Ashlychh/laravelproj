@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('edit', function (): mixed {
+    return view ('absensi_sholat.update');
+});
