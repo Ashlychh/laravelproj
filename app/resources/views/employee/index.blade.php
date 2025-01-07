@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($employee as $employee)
+                @foreach($attendance as $employee)
                 <tr>
                     <td>{{ $attendance->employee_id }}</td>
                     <td>{{ $attendance->time }}</td>
