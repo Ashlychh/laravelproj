@@ -41,13 +41,13 @@ class AuthController extends Controller
     // Read - Display a user's attendance (or other user details)
     public function show(User $user)
     {
-        return view("employee.attendance.show", compact("user"));
+        return view("employee.attendance.show", compact("employee.attendace"));
     }
 
     // Edit - Show the edit form for a user's attendance or other details
     public function edit(User $user)
     {
-        return view('employee.attendance.edit', compact('user'));
+        return view('employee.attendance.edit', compact('employee.attendance'));
     }
 
     // Update user details
