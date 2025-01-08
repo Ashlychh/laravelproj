@@ -36,7 +36,7 @@ class AuthController extends Controller
 
 
         if ($validator -> fails()){
-            return redirect() -> route('logIn')
+            return redirect() -> route('login')
             ->withErrors($validator)
             ->withInput();
 
@@ -53,4 +53,6 @@ class AuthController extends Controller
     public function logOut(request $request){
         return redirect()-> route('login')
     }
+
+
 }

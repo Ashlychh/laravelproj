@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\IclockController;
+use App\Http\Controllers\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\DeviceController;
-use App\Http\Controllers\IclockController;
+
+
+
+//leanne
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//login/sign in
+Route::get('signup', [AuthController::class, 'showSignupForm'])->name('signup');  // Show signup form
+Route::post('signup', [AuthController::class, 'signup'])->name('signup.store');     // Handle signup form submission
+
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');       // Show login form
+Route::post('login', [AuthController::class, 'login'])->name('login.store');        // Handle login form submission
+
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');           // Handle logout
+
+
+//device
 
 Route::get('device', [DeviceController::class,'Index'])->name('devices.index');
 Route::get('devices-log', [DeviceController::class,'DeviceLog'])->name ('devices.DeviceLog');
@@ -31,19 +53,6 @@ Route::post('/iclock/cdata', [iclockController::class, 'receiveRecords']);
 Route::get('/iclock/test', [iclockController::class, 'test']);
 Route::get('/iclock/getrequest', [iclockController::class, 'getrequest']);
 
-//leanne
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/signup', function () {
-    return view ('employee.signup');
-})->name('employee.signup');
-
-Route::get('/logIn', function () {
-    return view('employee.login');
-})->name('employee.login');
 
 // Route::post('/logIn', function () {
 //     // Handle form submission
