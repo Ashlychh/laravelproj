@@ -39,7 +39,8 @@ class AuthController extends Controller
             return redirect() -> route('logIn')
             ->withErrors($validator)
             ->withInput();
-            
+
         }
+
     }
 }
