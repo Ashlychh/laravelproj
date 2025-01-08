@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/signup', function () {
+    return view ('employee.signup');
+})->name('employee.signup');
+
 Route::get('/logIn', function () {
     return view('employee.login');
 })->name('employee.login');
