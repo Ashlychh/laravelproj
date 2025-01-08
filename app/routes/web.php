@@ -63,17 +63,3 @@ Route::prefix('employee/attendance')->name('employee.attendance.')->group(functi
     // Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
 });
 
-<<<<<<< Updated upstream
-
-// Route::get('/connection', function () {
-//         try{
-//             db:connection()->getpdo();
-
-//         }
-//         catch (\Expection $ex){
-//             dd($ex ->getMessage());
-//         }
-//         });
-    
-=======
->>>>>>> Stashed changes
