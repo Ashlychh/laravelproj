@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/logIn', function () {
-//     return view('employee.login');
-// })->name('employee.login');
+Route::get('/logIn', function () {
+    return view('employee.login');
+})->name('employee.login');
 
 // Route::post('/logIn', function () {
 //     // Handle form submission
@@ -52,25 +52,25 @@ use Illuminate\Support\Facades\Route;
 // })->name('employee.attendance.index');
 
 
-// use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AttendanceController;
 
-// Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
-//     Route::post('/', [AttendanceController::class, 'index'])->name('index');
-//     Route::get('create', [AttendanceController::class, 'create'])->name('create');
-//     Route::post('/', [AttendanceController::class, 'store'])->name('store');
-//     Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');
-//     // Route::put('{id}', [AttendanceController::class, 'update'])->name('update');
-//     // Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
-// });
+Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
+    Route::post('/', [AttendanceController::class, 'index'])->name('index');
+    Route::get('create', [AttendanceController::class, 'create'])->name('create');
+    Route::post('/', [AttendanceController::class, 'store'])->name('store');
+    Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');
+    // Route::put('{id}', [AttendanceController::class, 'update'])->name('update');
+    // Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
+});
 
 
-Route::get('/connection', function () {
-        try{
-            db:connection()->getpdo();
+// Route::get('/connection', function () {
+//         try{
+//             db:connection()->getpdo();
 
-        }
-        catch (\Expection $ex){
-            dd($ex ->getMessage());
-        }
-        });
+//         }
+//         catch (\Expection $ex){
+//             dd($ex ->getMessage());
+//         }
+//         });
     
