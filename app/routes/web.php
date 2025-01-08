@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// use App\Http\Controllers\DeviceController;
+// use App\Http\Controllers\IclockController;
+
+// Route::get('device', [DeviceController::class,'Index'])->name('devices.index');
+// Route::get('devices-log', [DeviceController::class,'DeviceLog'])->name ('devices.DeviceLog');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
