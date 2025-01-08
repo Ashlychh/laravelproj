@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
-use illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
@@ -30,83 +31,74 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Auth::login($user);
+        // Log in the user after registration
+        auth()->login($user);
 
-        // Return to homepage/dashboard
+        // Redirect to the login page after successful signup
         return redirect()->route('employee.login');
     }
 
-    //read
+    // Read - Display a user's attendance (or other user details)
     public function show(User $user)
     {
-        return view("employee.attendance.show",compact("employee.attendance"));
-
+        return view("employee.attendance.show", compact("user"));
     }
 
-    //edit
+    // Edit - Show the edit form for a user's attendance or other details
     public function edit(User $user)
     {
-        return view('employee.attendance.edit',compact('employee.attendance'));
+        return view('employee.attendance.edit', compact('user'));
     }
 
+    // Update user details
     public function update(Request $request, User $user)
     {
-        $validator = Validator::make($request->all(),
-        [ 
-            'email' => 'required|string|max:255',
-            'name' => 'required|email|unique:user,email',$user->id,
-            'password' => 'nullabele|min6|confirmed',
-            
+        $request->validate([ 
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'name' => 'required|string|max:255',
+            'password' => 'nullable|string|min:6|confirmed', // Password is optional when updating
         ]);
-        
-        if ($validator->fails()) {
-            return redirect()->route('login')
-             ->withErrors($validator)
-             ->withInput();
-                    }
-            
-        $user -> update([
-            'email'=> $request-> email,
-            'name'=> $request->name,
-            'password' => Hash::make($request->password),
+
+        // Update user details
+        $user->update([
+            'email' => $request->email,
+            'name' => $request->name,
+            'password' => $request->password ? Hash::make($request->password) : $user->password, // Hash password if provided
         ]);
+
+        // Redirect to the user's details page after update
+        return redirect()->route('employee.attendance.show', $user->id);
     }
+
+    // Delete a user
     public function destroy(User $user)
     {
         $user->delete();
         return redirect()->route('employee.attendance.index');
     }
+
+    // Handle login form submission
+    public function logIn(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // Attempt to authenticate the user
+        if (Auth::attempt($request->only('email', 'password'))) {
+            // Redirect to dashboard if successful
+            return redirect()->route('home');
+        }
+
+        // Redirect back with error message if credentials are invalid
+        return redirect()->route('login')->withErrors(['email' => 'Invalid credentials.']);
+    }
+
+    // Handle logout
+    public function logOut(Request $request)
+    {
+        Auth::logout(); // Log out the current user
+        return redirect()->route('login'); // Redirect to login page
+    }
 }
-
-
-
-//     public function 
-//     // Handle login form submission
-//     public function logIn(Request $request)
-//     {
-//         $validator = Validator::make($request->all(), [
-//             'email' => 'required|email',
-//             'password' => 'required',
-//         ]);
-
-//         if ($validator->fails()) {
-//             return redirect()->route('login')
-//                              ->withErrors($validator)
-//                              ->withInput();
-//         }
-
-//         if (Auth::attempt($request->only('email', 'password'))) {
-//             // If successfully login, redirect to dashboard.
-//             return redirect()->route('home');
-//         }
-
-//         return redirect()->route('login')->withErrors(['email' => 'Invalid credentials.']);
-//     }
-
-//     // Handle logout
-//     public function logOut(Request $request)
-//     {
-//         Auth::logout();
-//         return redirect()->route('login');
-//     }
-// }

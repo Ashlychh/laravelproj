@@ -28,10 +28,18 @@ Route::get('/', function () {
 
 //login/sign in
 Route::get('signup', [AuthController::class, 'create'])->name('employee.signup');  // Show signup form
-Route::post('signup', [AuthController::class, 'signup'])->name('signup.store');     // Handle signup form submission
+Route::post('signup', [AuthController::class, 'store'])->name('signup.store');     // Handle signup form submission
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');       // Show login form
 Route::post('login', [AuthController::class, 'login'])->name('login.store');        // Handle login form submission
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/users', [AuthController::class, 'index'])->name('employee.attendance.index'); // List all users (Read)
+    Route::get('/users/{user}', [AuthController::class, 'show'])->name('employee.attendance.show'); // Show a single user's details (Read)
+    Route::get('/users/{user}/edit', [AuthController::class, 'edit'])->name('employee.attendance.edit'); // Show edit form (Update)
+    Route::put('/users/{user}', [AuthController::class, 'update'])->name('employee.attendance.update'); // Update user data (Update)
+    Route::delete('/users/{user}', [AuthController::class, 'destroy'])->name('employee.attendance.destroy'); // Delete a user (Delete)
+});
 
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');           // Handle logout
 
