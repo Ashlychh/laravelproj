@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class AuthController extends Controller
 {
     // Show signup form
     public function showSignUpForm()
     {
-        return view('signup');
+        return view('employee.signup');
     }
 
     // Handle signup form submission
