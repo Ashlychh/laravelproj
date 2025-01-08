@@ -27,7 +27,7 @@ Route::get('/', function () {
 });
 
 //login/sign in
-Route::get('signup', [AuthController::class, 'showSignupForm'])->name('employee.signup');  // Show signup form
+Route::get('signup', [AuthController::class, 'create'])->name('employee.signup');  // Show signup form
 Route::post('signup', [AuthController::class, 'signup'])->name('signup.store');     // Handle signup form submission
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');       // Show login form
