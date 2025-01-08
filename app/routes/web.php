@@ -18,15 +18,6 @@ use App\Http\Controllers\AuthController;
 */
 
 
-
-
-//leanne
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//login/sign in
 Route::get('signup', [AuthController::class, 'create'])->name('employee.signup');  // Show signup form
 Route::post('signup', [AuthController::class, 'store'])->name('signup.store');     // Handle signup form submission
 
@@ -51,6 +42,12 @@ Route::get('devices-log', [DeviceController::class,'DeviceLog'])->name ('devices
 Route::get('finger-log', [DeviceController::class, 'FingerLog'])->name('devices.FingerLog');
 Route::get('attendance', [DeviceController::class, 'Attendance'])->name('devices.Attendance');
 
+
+//leanne
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // handshake
 Route::get('/iclock/cdata', [iclockController::class, 'handshake']);
