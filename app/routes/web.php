@@ -63,6 +63,7 @@ Route::prefix('employee/attendance')->name('employee.attendance.')->group(functi
     // Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');
 });
 
+<<<<<<< Updated upstream
 
 // Route::get('/connection', function () {
 //         try{
@@ -74,3 +75,5 @@ Route::prefix('employee/attendance')->name('employee.attendance.')->group(functi
 //         }
 //         });
     
+=======
+>>>>>>> Stashed changes
