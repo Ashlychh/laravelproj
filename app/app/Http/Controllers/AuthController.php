@@ -33,7 +33,6 @@ class AuthController extends Controller
 
         // Log in the user after registration
         auth()->login($user);
-
         // Redirect to the login page after successful signup
         return redirect()->route('employee.login');
     }

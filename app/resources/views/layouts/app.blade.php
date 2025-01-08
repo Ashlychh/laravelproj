@@ -10,11 +10,60 @@
 
     <!-- Custom CSS (Optional) -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        /* Custom Orange Theme */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: #ff7f00; /* Orange */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa !important;
+            background-color: #e67e00;
+        }
+
+        .footer {
+            background-color: #ff7f00;
+            color: white;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        /* Custom Button Color */
+        .btn-primary {
+            background-color: #ff7f00;
+            border-color: #e67e00;
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e00;
+            border-color: #ff7f00;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/employee.attendance.index') }}"> Attendance</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,7 +71,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -30,14 +78,14 @@
                     </li>
                     <!-- Add more links as needed -->
                 </ul>
-            
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('employee.attendance.create') }}">Record Attendance</a>
                     </li>
                     <!-- Add more links as needed -->
                 </ul>
-           
+            </div>
         </div>
     </nav>
 
@@ -47,7 +95,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-3 mt-5">
+    <footer class="footer py-3 mt-5">
         <div class="container text-center">
             <p>&copy; {{ date('Y') }} Attendance System</p>
         </div>

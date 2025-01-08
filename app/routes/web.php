@@ -21,9 +21,7 @@ use App\Http\Controllers\AttendanceController;
 Route::get('signup', [AuthController::class, 'create'])->name('employee.signup');  // Show signup form
 Route::post('signup', [AuthController::class, 'store'])->name('signup.store');     // Handle signup form submission
 
-Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');       // Show login form
-Route::post('login', [AuthController::class, 'login'])->name('login.store');        // Handle login form submission
-
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('employee.login');       // Show login form
 
 Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
     Route::post('/', [AttendanceController::class, 'index'])->name('index');

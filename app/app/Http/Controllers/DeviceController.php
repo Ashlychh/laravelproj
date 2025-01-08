@@ -14,7 +14,7 @@ class DeviceController extends Controller
     public function index(Request $request)
     {
         $data['label'] = "Devices";
-        $data['log'] = DB::table('devices')->select('id','no_sn','online')->orderBy('online', 'DESC')->get();
+        $data['log'] = DB::table('devices')->select('id','serialNum','online')->orderBy('online', 'DESC')->get();
         return view('devices.index', $data);
     }
 
