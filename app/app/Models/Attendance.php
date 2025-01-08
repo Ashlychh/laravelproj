@@ -16,4 +16,3 @@ class Attendance extends Model
         'check_out',
     ];
 }
-
