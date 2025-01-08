@@ -42,5 +42,15 @@ class AuthController extends Controller
 
         }
 
+        if (Auth::attempt($request ->only("email","password"))){
+            //if successfully login, redirect to dashboard.
+            return redirect() -> route('home');
+        }
+
+        redirect ()-> route('login')-> withErrors(['email' => 'Invalid credentials.'])
+    }
+
+    public function logOut(request $request){
+        return redirect()-> route('login')
     }
 }
