@@ -33,7 +33,7 @@ class AuthController extends Controller
         Auth::login($user);
 
         // Return to homepage/dashboard
-        return redirect()->route('home');
+        return redirect()->route('employee.login');
     }
 
     // Handle login form submission
