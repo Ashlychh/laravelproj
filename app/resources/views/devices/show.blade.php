@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <h2>Device Details</h2>
-        <p>Name: {{ $device->nama }}</p>
-        <p>Serial Number: {{ $device->no_sn }}</p>
-        <p>Location: {{ $device->lokasi }}</p>
+        <p>Name: {{ $device->name }}</p>
+        <p>Serial Number: {{ $device->serialNum }}</p>
+        <p>Location: {{ $device->location }}</p>
         <p>Online: {{ $device->online }}</p>
         <a href="{{ route('devices.edit', $device->id) }}" class="btn btn-primary">Edit</a>
         <form action="{{ route('devices.destroy', $device->id) }}" method="post" class="d-inline">
