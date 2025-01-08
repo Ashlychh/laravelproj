@@ -13,12 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// use App\Http\Controllers\DeviceController;
-// use App\Http\Controllers\IclockController;
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\IclockController;
 
-// Route::get('device', [DeviceController::class,'Index'])->name('devices.index');
-// Route::get('devices-log', [DeviceController::class,'DeviceLog'])->name ('devices.DeviceLog');
+Route::get('device', [DeviceController::class,'Index'])->name('devices.index');
+Route::get('devices-log', [DeviceController::class,'DeviceLog'])->name ('devices.DeviceLog');
+Route::get('finger-log', [DeviceController::class, 'FingerLog'])->name('devices.FingerLog');
+Route::get('attendance', [DeviceController::class, 'Attendance'])->name('devices.Attendance');
 
+
+// handshake
+Route::get('/iclock/cdata', [iclockController::class, 'handshake']);
+
+// request dari device
+Route::post('/iclock/cdata', [iclockController::class, 'receiveRecords']);
+
+Route::get('/iclock/test', [iclockController::class, 'test']);
+Route::get('/iclock/getrequest', [iclockController::class, 'getrequest']);
+
+//leanne
 
 Route::get('/', function () {
     return view('welcome');
