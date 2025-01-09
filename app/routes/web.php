@@ -5,6 +5,7 @@ use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\IclockController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------|
