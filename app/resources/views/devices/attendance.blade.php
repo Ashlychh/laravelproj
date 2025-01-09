@@ -1,6 +1,7 @@
 @extends('layouts.app') 
 
 @section('content')
+<form action=""></form>
 <div class="container">
     <h2 class="mb-4">Attendance</h2>
 

@@ -48,7 +48,7 @@
 <body>
     <div class="container">
         <h2>SIGN UP FORM</h2>
-        <form method="post" action="{{ route('signup.store') }}">
+        <form method="post" action="{{ route('signup.stores') }}">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
