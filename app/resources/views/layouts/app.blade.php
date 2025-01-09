@@ -18,7 +18,7 @@
         }
         
         .navbar {
-            background-color: #FF5A00; /* Orange */
+            background-color: #534666; /* Orange */
         }
 
         .navbar-brand,
@@ -32,11 +32,11 @@
 
         .navbar-nav .nav-link:hover {
             color: #f8f9fa !important;
-            background-color: #FF5A00;
+            background-color: #534666;
         }
 
         .footer {
-            background-color: #FF5A00;
+            background-color: #534666;
             color: white;
         }
 
@@ -50,15 +50,15 @@
 
         /* Custom Button Color */
         .btn-primary {
-            background-color: #FF5A00;
+            background-color: #138086;
             ;
-            border-color: #FF5A00;
+            border-color: #138086;
             ;
         }
 
         .btn-primary:hover {
-            background-color:#FF5A00;
-            border-color: #FF5A00;
+            background-color:#138086;
+            border-color: #138086;
         }
     </style>
 </head>
