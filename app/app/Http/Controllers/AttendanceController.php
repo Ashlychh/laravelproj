@@ -14,11 +14,11 @@ class AttendanceController extends Controller
     public function index()
     {
         // Fetch data for the DataTable
-        $attendances = Attendance::query();
+        $attendance = Attendance::query();
 
         // Return DataTable response
         if (request()->ajax()) {
-            return DataTables::of($attendances)
+            return DataTables::of($attendance)
                 ->addColumn('action', function($row) {
                     return '<a href="'.route('employee.attendance.edit', $row->id).'" class="btn btn-primary btn-sm">Edit</a> 
                             <form action="'.route('employee.attendance.destroy', $row->id).'" method="POST" style="display:inline;">

@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($attendances as $attendance)
+            @foreach ($attendance as $attendance)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $attendance->employee_id }}</td>
