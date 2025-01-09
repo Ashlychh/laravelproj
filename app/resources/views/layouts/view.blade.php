@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </div>
-    </nav>l,;,
+    </nav>
 
     <!-- Main Content Section -->
     <div class="container mt-4">
