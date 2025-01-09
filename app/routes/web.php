@@ -36,14 +36,14 @@ Route::post('employee/login', [LoginController::class, 'login'])->name('login.su
 
 // Employee Attendance Routes
 Route::prefix('home')->name('employee.attendance.')->group(function() {
+    
     // List attendance records
     Route::post('list', [AttendanceController::class, 'index'])->name('index');
 
     // Show form to create a new attendance
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('add');  // Renamed to 'add'
-
+});
     // Store new attendance
-<<<<<<< HEAD
 
 
 Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
@@ -53,8 +53,7 @@ Route::prefix('home')->name('employee.attendance.')->middleware('auth')->group(f
     Route::post('list', [AttendanceController::class, 'index'])->name('index');
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('create');
 
-=======
->>>>>>> e45e091cc3143288df80ec3e2cc515349816db34
+
     Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Edit an attendance record
