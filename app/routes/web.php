@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\IclockController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\SignupController;
 
 /*
 |--------------------------------------------------------------------------|
@@ -18,14 +18,13 @@ use App\Http\Controllers\AttendanceController;
 route::get('/dbconn',function (){
     return view("dbconn");
 });
-use App\Http\Controllers\SignupController;
+
 
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
 // Show login form (GET request)
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 // Handle login request (POST request)
 Route::post('login', [LoginController::class, 'login']);
 
