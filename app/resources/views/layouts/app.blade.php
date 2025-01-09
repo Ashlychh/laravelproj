@@ -69,12 +69,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-<<<<<<< Updated upstream
-        
-=======
+
 
             <a class="navbar-brand" >Attendance</a>
->>>>>>> Stashed changes
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                    
