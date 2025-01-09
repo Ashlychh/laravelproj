@@ -13,7 +13,7 @@ class AttendanceController extends Controller
     public function index()
     {
         $attendances = Attendance::all();
-        return view('employee.attendance.index', compact('attendances'));
+        return view('employee.attendance.index');
     }
 
     // Show form to create new attendance

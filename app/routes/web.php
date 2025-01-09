@@ -31,7 +31,6 @@ Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.sig
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
 
-
 Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
