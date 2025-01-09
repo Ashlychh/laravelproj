@@ -22,7 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('dashboard') }}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item">hhey
                         <a class="nav-link" href="{{ route('profile') }}">Profile</a>
                     </li>
                     <li class="nav-item">
