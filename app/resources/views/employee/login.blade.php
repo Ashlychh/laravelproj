@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('home') }}">
+<form method="POST" action="{{ route('login.submit') }}">
    
 @extends('layouts.app') <!-- You can use your main layout file -->
 
@@ -20,7 +20,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Log In</button>
-
+    
     <div>
     <a href="{{ route('employee.signup') }}"> Create an Account.</a>
     </div>
