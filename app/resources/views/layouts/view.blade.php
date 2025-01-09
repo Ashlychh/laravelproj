@@ -25,6 +25,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Add Employee</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employee.attendance.edit">Edit attendance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Add Employee</a>
+                    </li>
                    
                     <li class="nav-item">
                         <a class="nav-link" href="">Logout</a>
