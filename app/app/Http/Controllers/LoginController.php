@@ -26,7 +26,7 @@
             // Attempt to log the user in
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
                 // Authentication was successful, redirect to the intended page or dashboard
-                return redirect()->intended(route('home.list'));
+                return redirect()->intended(route('home'));
             } else {
                 // Authentication failed
                 return back()->withErrors([
