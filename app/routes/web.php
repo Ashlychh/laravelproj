@@ -24,11 +24,9 @@ route::get('/dbconn',function (){
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
-<<<<<<< Updated upstream
-Route::middleware('auth')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm']);
     Route::post('login', [LoginController::class, 'login']);
-});
+
 
 // Employee Attendance Routes
 Route::get('/', [AttendanceController::class, 'index'])->name('index');  // List attendance records
@@ -37,7 +35,6 @@ Route::post('/', [AttendanceController::class, 'store'])->name('store');  // Sto
 Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');  // Edit an attendance record
 Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record
 Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');  // Delete an attendance record
-=======
 // Show login form (GET request)
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 // // Handle login request (POST request)
@@ -55,7 +52,6 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.l
 
 
 
->>>>>>> Stashed changes
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
