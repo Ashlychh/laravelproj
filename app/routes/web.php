@@ -35,7 +35,7 @@ Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('e
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
 
-    Route::post('attendance', [AttendanceController::class, 'index'])->name('employee.attendance.index');
+    Route::get('attendance', [AttendanceController::class, 'index'])->name('employee.attendance.index');
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('employee.attendance.add');
 
     // Edit an attendance record
@@ -47,7 +47,7 @@ Route::post('employee/login', [LoginController::class, 'login'])->name('login.su
     Route::put('{id}/update', [AttendanceController::class, 'update'])->name('update');
 
     // Delete an attendance record
-    Route::delete('{id}/delete', [AttendanceController::class, 'destroy'])->name('destroy');
+    // Route::delete(uri: '{id}/delete', [AttendanceController::class, 'destroy'])->name('destroy');
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
