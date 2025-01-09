@@ -15,10 +15,12 @@
         body {
             background-color: #f8f9fa;
             color: #333;
+           
         }
         
         .navbar {
             background-color: #534666; 
+         
         }
 
         .navbar-brand,
@@ -42,6 +44,7 @@
 
         .footer p {
             margin: 0;
+            background-size: auto;
         }
 
         .container {

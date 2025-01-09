@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Signup</h2>
+        <h2>CREATE AN ACCOUNT</h2>
         <form action="{{ route('signup.store') }}" method="POST">
             @csrf
             <div class="form-group">
