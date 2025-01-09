@@ -29,7 +29,7 @@
                     <td>{{ $attendance->status }}</td>
                     <td>
                         <a href="{{ route('employee.attendance.edit', $attendance->id) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('employee.attendance.destroy', $attendance->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('destroy', $attendance->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
