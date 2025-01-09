@@ -70,13 +70,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
 <<<<<<< Updated upstream
-            <a class="navbar-brand" href="{{ url('/employee.attendance.index') }}"> ADMS_SERVER_TRIAL</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         
 =======
+
             <a class="navbar-brand" >Attendance</a>
 >>>>>>> Stashed changes
             <div class="collapse navbar-collapse" id="navbarNav">
