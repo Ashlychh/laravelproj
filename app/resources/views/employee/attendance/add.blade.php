@@ -1,11 +1,11 @@
 
-@extends('layouts.app')
+@extends('layouts.view')
 
 @section('content')
     <div class="container">
         <h2>Add Device</h2>
      
-            <form method="post" action="{{ route('employee.attendance.create') }}">
+            <form method="post" action="{{ route('add/new') }}">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>

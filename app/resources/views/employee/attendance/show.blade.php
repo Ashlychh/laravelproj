@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.view')
 
 @section('content')
     <div class="container">
@@ -8,8 +8,8 @@
         <p>Employee Id: {{ $employee->employee_id }}</p>
         <p>Check In:{{ $employee->check_in }}</p>
         <p>Chech Out: {{ $employee->chech_out }}</p>
-        <a href="{{ route('employee.edit', $employee->id) }}" class="btn btn-primary">Edit</a>
-        <form action="{{ route('employee.destroy', $employee->id) }}" method="post" class="d-inline">
+        <a href="{{ route('{id}/edit', $employee->id) }}" class="btn btn-primary">Edit</a>
+        <form action="{{ route('{id}/delete', $employee->id) }}" method="post" class="d-inline">
             @csrf
             @method('delete')
             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee record?')">Delete</button>
