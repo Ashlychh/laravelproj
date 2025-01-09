@@ -37,13 +37,14 @@ Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('e
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
 // Employee Attendance Routes
-Route::get('/', [AttendanceController::class, 'index'])->name('index');  // List attendance records
+Route::prefix('home')->name('employee.')->group(function() {
+Route::get('/attendance', [AttendanceController::class, 'index'])->name('index');  // List attendance records
 Route::get('create', [AttendanceController::class, 'create'])->name('create');  // Show form to create new attendance
 Route::post('/', [AttendanceController::class, 'store'])->name('store');  // Store new attendance
 Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');  // Edit an attendance record
 Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record
 Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');  // Delete an attendance record
-
+});
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
