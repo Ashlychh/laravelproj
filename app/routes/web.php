@@ -22,8 +22,7 @@ use App\Http\Controllers\SignupController;
 
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
-
-Route::get('login', [SignupController::class, 'showLoginForm'])->name('employee.login');  // Show login form
+Route::get('login', [SignupController::class, 'login'])->name('employee.login');  // Show login form
 // Route::post('logout', [AuthController::class, 'logout'])->name('logout');    // Handle logout (uncomment if you need it)
 
 
