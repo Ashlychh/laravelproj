@@ -13,21 +13,21 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('employee.attendance.add') }}">Dashboard</a>
+            <a class="navbar-brand" href="">Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('employee.attendance.show') }}">Home</a>
+                        <a class="nav-link active" href="">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('employee.attendance.add') }}">Add Employee</a>
+                        <a class="nav-link" href="">Add Employee</a>
                     </li>
                    
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        <a class="nav-link" href="">Logout</a>
                     </li>
                 </ul>
             </div>
