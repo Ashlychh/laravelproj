@@ -38,7 +38,7 @@ class SignupController extends Controller
         ]);
 
         // Optionally, you could log the user in right after registration
-        auth()->login($user);
+
 
         // Redirect the user to a dashboard or the login page with a success message
         return redirect()->route('home')->with('success', 'Account created successfully!');
