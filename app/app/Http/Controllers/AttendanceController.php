@@ -19,7 +19,7 @@ class AttendanceController extends Controller
     // Show form to create new attendance
     public function create()
     {
-        return view('employee.attendance.create');
+        return view('employee.attendance.add');
     }
 
     // Store new attendance

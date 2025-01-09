@@ -24,7 +24,8 @@
             // Attempt to log the user in
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
                 // Authentication was successful, redirect to the intended page or dashboard
-                return redirect()->intended(route('employee.attendance.add'));
+                return redirect()->intended(route('employee.attendance.create'));
+
             } else {
                 // Authentication failed
                 return back()->withErrors([
