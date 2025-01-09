@@ -5,8 +5,6 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
 
-
-
     class LoginController extends Controller
     {
         // Show login form
