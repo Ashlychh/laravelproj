@@ -30,21 +30,6 @@ route::get('/dbconn',function (){
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
-// Login Routes
-Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
-Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
-
-// Employee Attendance Routes
-Route::prefix('home')->name('employee.attendance.')->group(function() {
-    
-    // List attendance records
-    Route::post('list', [AttendanceController::class, 'index'])->name('index');
-
-    // Show form to create a new attendance
-    Route::get('add/employee', [AttendanceController::class, 'create'])->name('add');  // Renamed to 'add'
-});
-    // Store new attendance
-
 
 Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
