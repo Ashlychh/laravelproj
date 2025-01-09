@@ -20,7 +20,10 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Log In</button>
-
+    
+    <div>
+    <a href="{{ route('employee.signup') }}"> Create an Account.</a>
+    </div>
 
 </form>
 </div>
