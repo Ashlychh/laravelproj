@@ -24,6 +24,7 @@ route::get('/dbconn',function (){
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
+<<<<<<< Updated upstream
 Route::middleware('auth')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm']);
     Route::post('login', [LoginController::class, 'login']);
@@ -36,6 +37,25 @@ Route::post('/', [AttendanceController::class, 'store'])->name('store');  // Sto
 Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');  // Edit an attendance record
 Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record
 Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');  // Delete an attendance record
+=======
+// Show login form (GET request)
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
+// // Handle login request (POST request)
+// Route::post(
+
+
+// Employee Attendance Routes
+// Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
+    Route::get('/', [AttendanceController::class, 'index'])->name('index');      // List attendance records
+    Route::get('create', [AttendanceController::class, 'create'])->name('create'); // Show form to create new attendance
+    Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit'); // Edit an attendance record
+    Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record (uncomment if needed)
+    Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy'); // Delete an attendance record (uncomment if needed)
+// });
+
+
+
+>>>>>>> Stashed changes
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
