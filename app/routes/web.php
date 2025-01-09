@@ -24,8 +24,11 @@ route::get('/dbconn',function (){
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
-    Route::get('login', [LoginController::class, 'showLoginForm']);
-    Route::post('login', [LoginController::class, 'login']);
+// Show the login form (GET request)
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
+
+// Handle login submission (POST request)
+Route::post('login', [LoginController::class, 'login'])->name('login.submit');
 
 
 // Employee Attendance Routes
