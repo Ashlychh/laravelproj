@@ -11,14 +11,14 @@
     <!-- Custom CSS (Optional) -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
-        /* Custom Orange Theme */
+        
         body {
             background-color: #f8f9fa;
             color: #333;
         }
         
         .navbar {
-            background-color: #534666; /* Orange */
+            background-color: #534666; 
         }
 
         .navbar-brand,
