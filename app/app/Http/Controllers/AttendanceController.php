@@ -14,11 +14,11 @@ class AttendanceController extends Controller
     public function index()
     {
         // Fetch data for the DataTable
-        $attendance = Attendance::query();
+        $attendances = Attendance::query();
 
         // Return DataTable response
         if (request()->ajax()) {
-            return DataTables::of($attendance)
+            return DataTables::of($attendances)
                 ->addColumn('action', function($row) {
                     return '<a href="'.route('employee.attendance.edit', $row->id).'" class="btn btn-primary btn-sm">Edit</a> 
                             <form action="'.route('employee.attendance.destroy', $row->id).'" method="POST" style="display:inline;">
@@ -61,7 +61,7 @@ class AttendanceController extends Controller
     // Edit attendance record
     public function edit($id)
     {
-        $attendance = Attendance::findOrFail($id);
+        $attendances = Attendance::findOrFail($id);
         return view('employee.attendance.edit', compact('attendance'));
     }
 
@@ -74,8 +74,8 @@ class AttendanceController extends Controller
             'status' => 'required|string',
         ]);
 
-        $attendance = Attendance::findOrFail($id);
-        $attendance->update($request->all());
+        $attendances = Attendance::findOrFail($id);
+        $attendances->update($request->all());
 
         return redirect()->route('employee.attendance.index')->with('success', 'Attendance updated successfully');
     }
@@ -83,8 +83,8 @@ class AttendanceController extends Controller
     // Delete an attendance record
     public function destroy($id)
     {
-        $attendance = Attendance::findOrFail($id);
-        $attendance->delete();
+        $attendances = Attendance::findOrFail($id);
+        $attendances->delete();
 
         return redirect()->route('employee.attendance.index')->with('success', 'Attendance deleted successfully');
     }
