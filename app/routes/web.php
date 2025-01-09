@@ -36,12 +36,14 @@ Route::post('employee/login', [LoginController::class, 'login'])->name('login.su
 
 
 
+   
+    Route::post('attendance', [AttendanceController::class, 'index'])->name('employee.attendance.index');
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('employee.attendance.add');
-    Route::post('list', [AttendanceController::class, 'index'])->name('employee.attendance.index');
-    Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Edit an attendance record
     Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('employee.attendance.edit');
+    
+    Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Update attendance record
     Route::put('{id}/update', [AttendanceController::class, 'update'])->name('update');
