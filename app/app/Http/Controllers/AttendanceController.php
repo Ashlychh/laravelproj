@@ -37,7 +37,7 @@ class AttendanceController extends Controller
         $attendances = Attendance::all();
     
         // Return a view that displays the list of attendance records
-        return view('employee.attendance.index', compact('attendances'));
+        return view('employee.attendance.index', compact('attendance'));
     }
 
      public function show($id)

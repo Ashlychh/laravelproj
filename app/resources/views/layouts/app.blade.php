@@ -80,13 +80,7 @@
                     </li>
                     <!-- Add more links as needed -->
                 </ul>
-
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('create') }}">Record Attendance</a>
-                    </li>
-                    <!-- Add more links as needed -->
-                </ul>
+              
             </div>
         </div>
     </nav>
