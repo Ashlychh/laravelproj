@@ -34,11 +34,9 @@ Route::post('/signup', [SignupController::class, 'store'])->name('signup.store')
 Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
-Route::prefix('home')->name('employee.attendance.')->middleware('auth')->group(function() {
+Route::prefix('home')->name('employee.attendance.')->group(function() {
     Route::post('list', [AttendanceController::class, 'index'])->name('index');
-    Route::get('add/employee', [AttendanceController::class, 'create'])->name('create');
-
-
+    Route::get('add/employee', [AttendanceController::class, 'create'])->name('add');
     Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Edit an attendance record
