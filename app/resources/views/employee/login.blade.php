@@ -1,6 +1,6 @@
 <form method="POST" action="{{ route('login.submit') }}">
     @csrf
-
+<h1> LogIn</h1>
     <!-- Email Input -->
     <div>
         <label for="email">Email</label>
