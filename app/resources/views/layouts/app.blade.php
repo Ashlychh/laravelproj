@@ -27,7 +27,7 @@
         }
 
         .navbar-toggler-icon {
-            background-color: white;
+            background-color: #138086;
         }
 
         .navbar-nav .nav-link:hover {
