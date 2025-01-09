@@ -10,16 +10,17 @@ use Illuminate\Support\Facades\Validator;
 class AttendanceController extends Controller
 {
 
-    public function create()
-    {
-        return view('employee.attendance.add');
-    }
 
     // List attendance records
     public function index()
     {
         $attendances = Attendance::all();
         return view('employee.attendance.index');
+    }
+
+    public function create()
+    {
+        return view('employee.attendance.add');
     }
 
     // Show form to create new attendance
