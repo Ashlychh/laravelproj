@@ -10,14 +10,29 @@ use Illuminate\Support\Facades\Validator;
 class AttendanceController extends Controller
 {
 
-
     // List attendance records
     public function index()
     {
-        $attendances = Attendance::all();
-        return view('employee.attendance.index');
-    }
+        // Fetch data for the DataTable
+        $attendances = Attendance::query();
 
+        // Return DataTable response
+        if (request()->ajax()) {
+            return DataTables::of($attendances)
+                ->addColumn('action', function($row) {
+                    return '<a href="'.route('employee.attendance.edit', $row->id).'" class="btn btn-primary btn-sm">Edit</a> 
+                            <form action="'.route('employee.attendance.destroy', $row->id).'" method="POST" style="display:inline;">
+                                '.csrf_field().'
+                                '.method_field('DELETE').'
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>';
+                })
+                ->rawColumns(['action'])  // Allow raw HTML in the action column
+                ->make(true);
+        }
+
+        return view('employee.attendance.index'); // Return the Blade view
+    }
     public function create()
     {
         return view('employee.attendance.add');
