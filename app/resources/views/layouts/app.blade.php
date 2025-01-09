@@ -29,7 +29,7 @@
         }
 
         .navbar-toggler-icon {
-            background-color: #138086;
+            background-color: #534666;
         }
 
         .navbar-nav .nav-link:hover {
@@ -44,7 +44,6 @@
 
         .footer p {
             margin: 0;
-            background-size: auto;
         }
 
         .container {
@@ -70,7 +69,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/employee.attendance.index') }}"> Attendance</a>
+            <a class="navbar-brand" href="{{ url('/employee.attendance.index') }}"> ADMS_SERVER_TRIAL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
