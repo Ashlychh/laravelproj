@@ -9,7 +9,7 @@ class LoginController extends Controller
     // Show login form
     public function showLoginForm()
     {
-        return view('auth.login'); // Ensure this view exists in resources/views/auth/login.blade.php
+        return view('employee.login'); // Ensure this view exists in resources/views/auth/login.blade.php
     }
 
     // Handle login logic
@@ -23,7 +23,7 @@ class LoginController extends Controller
         // Attempt to log the user in
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // Authentication was successful, redirect to the intended page or dashboard
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('employee.home');
         } else {
             // Authentication failed
             return back()->withErrors([
