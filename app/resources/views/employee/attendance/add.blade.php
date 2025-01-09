@@ -5,7 +5,7 @@
 <div class="container">
     <h2>Create New Attendance</h2>
 
-    <form action="{{ route('employee.attendance.show') }}" method="POST">
+    <form action="{{ route('employee.attendance.index') }}" method="POST">
         @csrf
 
         <div class="form-group">
