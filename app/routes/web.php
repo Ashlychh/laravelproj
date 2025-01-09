@@ -38,11 +38,11 @@ Route::post('employee/login', [LoginController::class, 'login'])->name('login.su
 
 // Employee Attendance Routes
 // Route::prefix('home')->name('employee.attendance.')->group(function() {
-Route::post('home', [AttendanceController::class, 'index'])->name('index');  // List attendance records
-Route::get('add/employee', [AttendanceController::class, 'create'])->name('create');  // Show form to create new attendance
-Route::post('add/new', [AttendanceController::class, 'store'])->name('store');  // Store new attendance
-Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');  // Edit an attendance record
-Route::put('{id}/update', [AttendanceController::class, 'update'])->name('update');  // Update attendance record
+Route::post('home', [AttendanceController::class, 'index'])->name('employee.attendance.index');  // List attendance records
+Route::get('add/employee', [AttendanceController::class, 'create'])->name('employee.attendance.create');  // Show form to create new attendance
+Route::post('add/new', [AttendanceController::class, 'store'])->name('employee.attendance.store');  // Store new attendance
+Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('employee.attendance.edit');  // Edit an attendance record
+Route::put('{id}/update', [AttendanceController::class, 'update'])->name('employee.attendance.update');  // Update attendance record
 Route::delete('{id}/delete', [AttendanceController::class, 'destroy'])->name('destroy');  // Delete an attendance record
 // });
 
