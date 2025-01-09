@@ -33,8 +33,8 @@ Route::post('/signup', [SignupController::class, 'store'])->name('signup.store')
 // Route::post('login', [LoginController::class, 'showLoginForm'])-> name('employee.login');
 
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
-Route::post('login', [LoginController::class, 'login'])->name('login.submit');
+Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
+Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
 // // Employee Attendance Routes
 // Route::get('/', [AttendanceController::class, 'index'])->name('index');  // List attendance records
