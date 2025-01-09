@@ -31,16 +31,17 @@ Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.sig
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
 
+
 Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('employee.login');
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
-Route::prefix('home')->name('employee.attendance.')->group(function() {
-    Route::post('list', [AttendanceController::class, 'index'])->name('index');
-    Route::get('add/employee', [AttendanceController::class, 'create'])->name('add');
+
+    Route::post('list', [AttendanceController::class, 'index'])->name('employee.attendance.index');
+    Route::get('add/employee', [AttendanceController::class, 'create'])->name('employee.attendance.add');
     Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Edit an attendance record
-    Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');
+    Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('employee.attendance.edit');
 
     // Update attendance record
     Route::put('{id}/update', [AttendanceController::class, 'update'])->name('update');
