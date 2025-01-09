@@ -23,13 +23,10 @@ use App\Http\Controllers\SignupController;
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
-// Route::get('login', [AuthController::class, 'showLoginForm'])->name('employee.login');  // Show login form
-// // Route::post('logout', [AuthController::class, 'logout'])->name('logout');    // Handle logout (uncomment if you need it)
+Route::get('login', [SignupController::class, 'showLoginForm'])->name('employee.login');  // Show login form
+// Route::post('logout', [AuthController::class, 'logout'])->name('logout');    // Handle logout (uncomment if you need it)
 
 
-
-Route::get('/attendance/create', [AttendanceController::class, 'create'])->name('attendance.create');
-Route::post('/attendance', [AttendanceController::class, 'store'])->name('attendance.store');
 
 // Employee Attendance Routes
 // Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
