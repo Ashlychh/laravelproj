@@ -26,7 +26,7 @@
                         <a class="nav-link" href="">Add Employee</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="employee.attendance.edit">Edit attendance</a>
+                        <a class="nav-link" href="{{route("employee.attendance.edit")}}">Edit attendance</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Add Employee</a>
