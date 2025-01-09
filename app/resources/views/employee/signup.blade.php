@@ -31,6 +31,11 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Signup</button>
+
+
+          
         </form>
+        <label> if you already have an Account:</label>
+        <a href="{{ route('employee.login') }}">Login</a>
     </div>
 @endsection
