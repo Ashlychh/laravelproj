@@ -1,4 +1,3 @@
-<?php 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,7 +8,7 @@ class LoginController extends Controller
     // Show login form
     public function showLoginForm()
     {
-        return view('employee.login'); // Ensure this view exists in resources/views/auth/login.blade.php
+        return view('employee.login'); // Ensure this view exists in resources/views/employee/login.blade.php
     }
 
     // Handle login logic
@@ -32,5 +31,3 @@ class LoginController extends Controller
         }
     }
 }
-
-

@@ -20,29 +20,22 @@ route::get('/dbconn',function (){
     return view("dbconn");
 });
 
-
+// Signup Routes
 Route::get('/signup', [SignupController::class, 'showForm'])->name('employee.signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
 
-// Show login form (GET request)
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('employee.login');
-// Handle login request (POST request)
-Route::post('login', [LoginController::class, 'login']);
-
-
+Route::middleware('auth')->group(function () {
+    Route::get('login', [LoginController::class, 'showLoginForm']);
+    Route::post('login', [LoginController::class, 'login']);
+});
 
 // Employee Attendance Routes
-// Route::prefix('employee/attendance')->name('employee.attendance.')->group(function() {
-    Route::get('/', [AttendanceController::class, 'index'])->name('index');      // List attendance records
-    Route::get('create', [AttendanceController::class, 'create'])->name('create'); // Show form to create new attendance
-    Route::post('/', [AttendanceController::class, 'store'])->name('store');     // Store new attendance
-    Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit'); // Edit an attendance record
-    Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record (uncomment if needed)
-    Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy'); // Delete an attendance record (uncomment if needed)
-// });
-
-
-
+Route::get('/', [AttendanceController::class, 'index'])->name('index');  // List attendance records
+Route::get('create', [AttendanceController::class, 'create'])->name('create');  // Show form to create new attendance
+Route::post('/', [AttendanceController::class, 'store'])->name('store');  // Store new attendance
+Route::get('{id}/edit', [AttendanceController::class, 'edit'])->name('edit');  // Edit an attendance record
+Route::put('{id}', [AttendanceController::class, 'update'])->name('update');  // Update attendance record
+Route::delete('{id}', [AttendanceController::class, 'destroy'])->name('destroy');  // Delete an attendance record
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
@@ -52,7 +45,6 @@ Route::prefix('devices')->name('devices.')->group(function() {
     Route::get('attendance', [DeviceController::class, 'attendance'])->name('attendance');  // View attendance data
 });
 
-
 // iClock Routes for Device Communication
 Route::prefix('iclock')->name('iclock.')->group(function() {
     Route::get('cdata', [IclockController::class, 'handshake'])->name('handshake');  // Handshake with the device
@@ -61,10 +53,7 @@ Route::prefix('iclock')->name('iclock.')->group(function() {
     Route::get('getrequest', [IclockController::class, 'getrequest'])->name('getrequest');  // Handle request from the device
 });
 
-
-
 // Welcome Route (Default Landing Page)
 Route::get('/', function () {
     return view('welcome');
 });
-
