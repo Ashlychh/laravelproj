@@ -48,7 +48,6 @@ Route::post('employee/login', [LoginController::class, 'login'])->name('login.su
 
     // Delete an attendance record
     Route::delete('{id}/delete', [AttendanceController::class, 'destroy'])->name('destroy');
-});
 
 // Device Routes
 Route::prefix('devices')->name('devices.')->group(function() {
