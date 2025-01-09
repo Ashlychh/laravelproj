@@ -35,8 +35,9 @@ Route::get('employee/login', [LoginController::class, 'showLoginForm'])->name('e
 Route::post('employee/login', [LoginController::class, 'login'])->name('login.submit');
 
 
-    Route::post('list', [AttendanceController::class, 'index'])->name('employee.attendance.index');
+
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('employee.attendance.add');
+    Route::post('list', [AttendanceController::class, 'index'])->name('employee.attendance.index');
     Route::post('add/new', [AttendanceController::class, 'store'])->name('store');
 
     // Edit an attendance record

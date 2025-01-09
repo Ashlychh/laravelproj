@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Validator;
 
 class AttendanceController extends Controller
 {
+
+    public function create()
+    {
+        return view('employee.attendance.add');
+    }
+
     // List attendance records
     public function index()
     {
@@ -17,11 +23,7 @@ class AttendanceController extends Controller
     }
 
     // Show form to create new attendance
-    public function create()
-    {
-        return view('employee.attendance.add');
-    }
-
+   
     // Store new attendance
     public function store(Request $request)
     {
