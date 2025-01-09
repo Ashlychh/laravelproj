@@ -41,7 +41,7 @@ Route::prefix('home')->name('employee.attendance.')->group(function() {
 
     // Show form to create a new attendance
     Route::get('add/employee', [AttendanceController::class, 'create'])->name('add');  // Renamed to 'add'
-}); 
+
     // Store new attendance
 <<<<<<< HEAD
 
